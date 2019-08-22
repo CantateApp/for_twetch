@@ -9,18 +9,22 @@ class Cantate
     end
     author_array = []
 
-    paymail = [{ handle: "sirce", owner_twttr: ["@toothman", "@cantatedotco"]}]
-    author_array << ["@georgetoothman", "#nothing", "$bsv"]
-    client = [{ details: ["@applemusic", "@apple"], paymail: "applemusic"}]
+    paymail = [ paymail: ["applemusic"], 
+    			twttr_addr: ["George", "@cantatedotco"], 
+    			paymail_addr: ["http://moneybutton.email", "drovers@moneybutton.com"]
+    			]
 
-    twitter = [{ handle: "@twitter", paymail: "@paymailhandles"}, tags: ["$bsv"]]
+    author_array << ["@toothman", "#applemusic", "$bsv"]
+    client = [ twttr: ["@applemusic", "@apple"], hashtags: ["#applemusic", "#apple"]]
 
-    twetch_app = [ twetch_tags: { 
-    	handles: { "@paymailhandles", "@money_button", "@twetch"}, 
-    	ids: { "u/1133", "u/2459", "u/852"}, 
-    	twttr: {"@paymailhandles", "@money_button", "@twetchapp"}
-    	}
-    ]
+    twitter = [ twttr_tags: { apps: ["@twetchapp", "@twitter", "@paymailhandles", "@money_button"], tags: ["$bsv", "#retweet"] }]
+
+    twetch_app = [ { 
+    	meta_tags: { 
+    		twetch_handles: ["@1133", "@2459", "@852"]
+    		}, 
+    	twetch_ids: ["u/1133", "u/2459", "u/852"], 
+    }]
 
 
     def self.post_tags(twitter)
@@ -47,8 +51,17 @@ class Cantate
 		end
 	end
 
+	def self.twetch_metatags(twetch_app)
+		twetch_app.each do |item|
+			puts "#{item}"
+		end
+	end
+
 	advertise_paymail(paymail)
-	author_details(author_array)
+	puts "-----------------------------------------"
+	# author_details(author_array)
 	client_details(client)
 	post_tags(twitter)
+	puts "-----------------------------------------"
+	twetch_metatags(twetch_app)
 end
