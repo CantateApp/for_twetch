@@ -1,17 +1,27 @@
 class Cantate
-	attr_reader :twitter, :paymail, :client
+	attr_reader :twitter, :paymail, :client, :twetch_app
 
-	def initialize(twitter, paymail, client)
+	def initialize(twitter, paymail, client, twetch_app)
     	@twitter = twitter
     	@paymail = paymail
     	@client = client
+    	@twetch_app = twetch_app
     end
     author_array = []
 
-    twitter = [{ handle: "@twitter", paymail: "@paymailhandles"}, tags: ["$bsv"]]
-    author_array << ["@georgetoothman", "#nothing", "$bsv"]
-    client = [{ details: ["something", "something"], paymail: "#truth"}]
     paymail = [{ handle: "sirce", owner_twttr: ["@toothman", "@cantatedotco"]}]
+    author_array << ["@georgetoothman", "#nothing", "$bsv"]
+    client = [{ details: ["@applemusic", "@apple"], paymail: "applemusic"}]
+
+    twitter = [{ handle: "@twitter", paymail: "@paymailhandles"}, tags: ["$bsv"]]
+
+    twetch_app = [ twetch_tags: { 
+    	handles: { "@paymailhandles", "@money_button", "@twetch"}, 
+    	ids: { "u/1133", "u/2459", "u/852"}, 
+    	twttr: {"@paymailhandles", "@money_button", "@twetchapp"}
+    	}
+    ]
+
 
     def self.post_tags(twitter)
 		twitter.each do |item|
