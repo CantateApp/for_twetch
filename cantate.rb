@@ -10,21 +10,19 @@ class Cantate
     author_array = []
 
     paymail = [ paymail: ["applemusic"], 
-    			twttr_addr: ["George", "@cantatedotco"], 
-    			paymail_addr: ["http://moneybutton.email", "drovers@moneybutton.com"]
+    			contact_twttr: ["@cantatedotco"], 
+    			contact_paymail: ["http://moneybutton.email", "drovers@moneybutton.com"]
     			]
 
     author_array << ["@toothman", "#applemusic", "$bsv"]
-    client = [ twttr: ["@applemusic", "@apple"], hashtags: ["#applemusic", "#apple"]]
+    client = [ client_twttr: ["@applemusic", "@apple"], client_tags: ["#applemusic", "#apple"]]
 
-    twitter = [ twttr_tags: { apps: ["@twetchapp", "@twitter", "@paymailhandles", "@money_button"], tags: ["$bsv", "#retweet"] }]
+    twitter = [ related_apps: ["@twetchapp", "@twitter", "@paymailhandles", "@money_button"], hash_tags: ["$bsv", "#retweet"] ]
 
-    twetch_app = [ { 
-    	meta_tags: { 
-    		twetch_handles: ["@1133", "@2459", "@852"]
-    		}, 
-    	twetch_ids: ["u/1133", "u/2459", "u/852"], 
-    }]
+    twetch_app = [ twetch_twttr: "@twetchapp", 
+    	ultra_tags: ["@1133", "@2459", "@852"],
+    	twetch_ids: ["u/1133", "u/2459", "u/852"] 
+    ]
 
 
     def self.post_tags(twitter)
