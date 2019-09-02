@@ -7,10 +7,10 @@ class Cantate
     @client = client
     @twetch_app = twetch_app
   end
-  
+
   author_array = []
 
-  paymail = [ paymail: ["drovers"], 
+  paymail = [ paymail: ["drovers"], ;fg
     twttr: ["@cantatedotco"], 
     baemail: ["https://baemail.me", "drovers@moneybutton.com"]
   ]
@@ -26,33 +26,23 @@ class Cantate
   ]
 
   def self.post_tags(twitter)
-    twitter.each do |item|
-      puts "#{item}"
-    end
+    twitter.each { |item| puts "#{item}"}
   end
 
   def self.client_details(client)
-    client.each do |item|
-      puts "#{item}"
-    end
+    client.each { |item| puts "#{item}"}
   end
 
   def self.author_details(author_array)
-    author_array.each do |item|
-      puts "#{item}"
-    end
+    author_array.each { |item| puts "#{item}"}
   end
 
   def self.advertise_paymail(paymail)
-    paymail.each do |details|
-      puts "#{details}"
-    end
+    paymail.each { |details| puts "#{details}"}
   end
 
   def self.twetch_metatags(twetch_app)
-    twetch_app.each do |item|
-      puts "#{item}"
-    end
+    twetch_app.each { |item| puts "#{item}"}
   end
 end
 
